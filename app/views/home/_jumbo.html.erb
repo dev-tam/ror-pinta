@@ -1,0 +1,13 @@
+<div class="jumbotron center">
+    <h1>Welcome to the Pinterexted!</h1>
+    <p>Learning Rails is fun!</p>
+    
+    <% if user_signed_in? %>
+        <%= link_to 'List Pins', pins_path, class:'btn btn-success' %>
+        <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-warning' %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'btn btn-primary' %>           
+    <% else %>   
+        <%= link_to 'Login', new_user_session_path, class:'btn btn-default btn-lg' %>
+        <%= link_to 'Join', new_user_registration_path, class:'btn btn-primary btn-lg' %>
+    <% end %>
+</div>
